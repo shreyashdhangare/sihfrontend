@@ -8,7 +8,7 @@ export default class NavTiles extends Component {
 
 <div className="container">
                 <header className="jumbotron my-4 homebackgrd" >
-                <h1 className="display-3" style={{color:"white"}}>Krishi Rocks!</h1>
+                <h1 className="display-3" style={{color:"white"}}>Krishi Kalyan</h1>
                 
                 <p className="lead" style={{color:"white"}} >Find Help in Agriculture | Get Crop Recommendations</p>
                 </header>

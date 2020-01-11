@@ -9,6 +9,20 @@ class broadcast extends Component{
 
         }
     }
+
+
+    handleChange = date => {this.setState({date});};
+    submitHandler =(e) =>{ 
+        e.preventDefault() ;
+        this.setState({sentData:'1'})
+        console.log(this.state)
+        axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
+        .then(response => { console.log(response)})
+        .catch(error => { console.log(error)})
+    }
+
+    handleType = (event) =>{   this.setState({type:event.target.value})    }    
+    handleWarning = (event) =>{   this.setState({warning:event.target.value})    }   
     render(){
         return(
             <div><div className="limiter">

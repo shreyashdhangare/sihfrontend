@@ -44,7 +44,7 @@ class government extends Component{
     }
 
     getChartData(){
-        axios.get('http://localhost:8080/govt/show/crop/produce',{params:{aadharid:'123456789012'}})
+        axios.get('http://192.168.43.148:8080/govt/show/crop/produce',{params:{aadharid:'123456789012'}})
         .then(response => {
             // this.data=response.data;
             console.log(JSON.stringify(response.data[0].name))
@@ -82,7 +82,7 @@ class government extends Component{
 
 
     getPrices(){
-        axios.get('http://localhost:8080/govt/show/crop/prices',{params:{aadharid:'123456789012'}})
+        axios.get('http://192.168.43.148:8080/govt/show/crop/prices',{params:{aadharid:'123456789012'}})
         .then(response => {
             // this.data=response.data;
             console.log(JSON.stringify(response.data[0].name))
@@ -122,7 +122,7 @@ class government extends Component{
     
 
     getProduceData(){
-    axios.get('http://localhost:8080/govt/show/cropdata',{params:{aadharid:'123456789012'}})
+    axios.get('http://192.168.43.148:8080/govt/show/cropdata',{params:{aadharid:'123456789012'}})
     .then(response => {
         // this.data=response.data;
         console.log(JSON.stringify(response.data[0].name))
