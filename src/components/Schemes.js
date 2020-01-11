@@ -11,8 +11,8 @@ export default class Schemes extends Component {
     }
     componentDidMount()
     {
-       //axios.get('http://192.168.43.233:8080/farmer/show/scheme/tags')
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('http://192.168.43.148:8080/farmer/show/scheme/tags')
+        //axios.get('https://jsonplaceholder.typicode.com/users')
         //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
         .then(response => {  
             console.log(response)
@@ -44,7 +44,7 @@ export default class Schemes extends Component {
                                 <ul className="list-unstyled mb-0">
                                     {posts.map(tagarr=> 
                                     
-                                       <Link to={{pathname:"/account/scheme-info/"+tagarr.tag}} key={tagarr.id}><li key={tagarr.id}>{tagarr.name}</li></Link> 
+                                       <Link to={{pathname:"/account/scheme-info/"+tagarr.tag}} key={tagarr.id}><li key={tagarr.id}>{tagarr.tag}</li></Link> 
                                     
                                         )}
                                 </ul>

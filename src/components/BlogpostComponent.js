@@ -18,10 +18,10 @@ export default class BlogpostComponent extends Component {
 
                         
                         <div className="card mb-4">
-                        <img className="card-img-top" src="http://placehold.it/750x300" alt=""/>
+                        <img className="card-img-top" src="https://www.nationalgeographic.com/content/dam/environment/photos/future_of_food/organic_farming_rough/01_organic_farming_i8860_20181003_11260.adapt.1900.1.jpg" alt=""/>
                         <div className="card-body">
-                            <h2 className="card-title">Post Title</h2>
-                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                            <h2 className="card-title">Organic Food RSS Feeds</h2>
+                            <p className="card-text">Organic Authority is the leading digital publication that's redefining what it means to live a conscious healthy lifestyle in America today. They obsessively cover the latest trends and organic food news, seasonal recipes, nutrition, wellness, natural beauty, and more. Organic Authority has all the tips and expert advice you need for delicious good living</p>
                             <a href="/account" className="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div className="card-footer text-muted">
@@ -32,10 +32,12 @@ export default class BlogpostComponent extends Component {
 
                         
                         <div className="card mb-4">
-                        <img className="card-img-top" src="http://placehold.it/750x300" alt=""/>
+                        <img className="card-img-top" src="https://media.gettyimages.com/photos/indias-presidential-palace-at-sunset-picture-id923835828?s=2048x2048" alt=""/>
                         <div className="card-body">
-                            <h2 className="card-title">Post Title</h2>
-                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                            <h2 className="card-title">Ministry wants update on grain procurement
+                            </h2>
+                            <p className="card-text">The food ministry has asked states to regularly update data on the amount of foodgrains purchased and the money disbursed to farmers along with their names to help it monitor and plan food procurement, and identify beneficiaries across the country.
+                            </p>
                             <a href="/account" className="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div className="card-footer text-muted">
@@ -46,15 +48,16 @@ export default class BlogpostComponent extends Component {
 
                         
                         <div className="card mb-4">
-                        <img className="card-img-top" src="http://placehold.it/750x300" alt=""/>
+                        <img className="card-img-top" src="https://img.etimg.com/thumb/msid-73151456,width-300,imgsize-355208,resizemode-4/8.jpg" alt=""/>
                         <div className="card-body">
-                            <h2 className="card-title">Post Title</h2>
-                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                            <h2 className="card-title">Agriculture has key role in making India a USD 5 trillion economy: Telangana Governor
+                                </h2>
+                            <p className="card-text">Telangana Governor Tamilisai Soundararajn on Tuesday said that agriculture has a key role to play in helping the country achieve its goal of becoming a USD five trillion economy.
+                            </p>
                             <a href="/account" className="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div className="card-footer text-muted">
                             Posted on January 1, 2017 by
-                            <a href="/account">Start Bootstrap</a>
                         </div>
                         </div>
 

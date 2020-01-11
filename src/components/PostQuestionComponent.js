@@ -3,20 +3,20 @@ import axios from 'axios'
 import {Button,TextInputField,Avatar} from 'evergreen-ui'
 import Form from 'react-bootstrap/Form';
 import {Container} from 'reactstrap'
-
-
-
-
+import { Box } from '@material-ui/core';
+import '../App.css'
+import './postQ.css'
 
 export class FeedComponent extends Component {
 
     constructor(props) {
         super(props)
-
+        let tempState
+        tempState=JSON.parse(localStorage.getItem("routeState"))
         this.state = {
-
             question : "",
-            aadharid : "",
+            aadharid :tempState.aadharid,
+            title:"",
             tags : []
         }
 
@@ -31,7 +31,7 @@ export class FeedComponent extends Component {
     submitHandler = (event) =>{
         event.preventDefault()
         console.log(this.state)
-        axios.post('http://192.168.43.233:8080/forum/post/question',this.state)
+        axios.post('http://192.168.43.148:8080/forum/post/question',this.state)
         .then(Response => {
             console.log(Response)
             window.alert("Entry successful!!!")
@@ -51,9 +51,10 @@ export class FeedComponent extends Component {
             
             <div>
                 <Avatar name="Jeroen Ransijn" size={40} />
-
-
-
+                
+                <center>
+             <h1>POST YOUR QUESTION HERE</h1> 
+                </center>  
 {/* 
 
              <Carousel>
@@ -96,10 +97,11 @@ export class FeedComponent extends Component {
                 </Carousel>  */}
 
 
- 
-
-               <Container><center> 
-               <Form.Group onSubmit = {this.submitHandler} >
+            
+                <Box component = "span" m={1} >
+               <Container><center>  
+               <Form.Group onSubmit = {this.submitHandler} className='greythis' >
+                   
                     <center>
 
                         <div className = 'container-fluid'>
@@ -117,25 +119,11 @@ export class FeedComponent extends Component {
                             </center>
                         </div>
  
-                        <div>
-                            <center>
-                                <TextInputField
-                                    required
-                                    label = "aadhar Id"
-                                    type = "text"
-                                    placeholder="aadhar Id"
-                                    name = "aadharid"
-                                    value = {this.state.aadharid}
-                                    onChange = {this.changeHandler}
-                                    width = "50%"
-                                />
-                            </center>
-                        </div>  
-
-
+  
                        <div>
                             <center>
                                 <TextInputField
+                                    style={{ margin: 8 }}
                                     required
                                     label = "Questions"
                                     type = "text"
@@ -143,11 +131,10 @@ export class FeedComponent extends Component {
                                     name = "question"
                                     value = {question}
                                     onChange = {this.changeHandler}
-                                    width = "50%"
+                                    width="70%"
                                 />
                             </center>
                         </div> 
-
                     </center>
                     <center>
                         <Button marginRight={16}
@@ -160,8 +147,10 @@ export class FeedComponent extends Component {
                     </center>
             </Form.Group>
             </center>
-            </Container>
             
+            </Container>
+            </Box>
+                </div>
 
 
 
@@ -172,7 +161,7 @@ export class FeedComponent extends Component {
 
 
 
-            </div>
+            
         )
     }
 }

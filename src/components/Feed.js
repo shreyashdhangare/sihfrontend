@@ -5,13 +5,12 @@ import { Button } from 'reactstrap'
 export default class Feed extends Component {
     render() {
         return (
-            
-            <React.Fragment>
-                <center>
-                <Button appearance="primary">  <Link to="/account/postquestion">ADD NEW QUESTION</Link> </Button>  
-                </center>    
+            <div>
+                
+                <Button outline color="primary">  <Link to="/account/postquestion">ADD NEW QUESTION</Link> </Button>  
+                    
                  <FeedComponent/>
-            </React.Fragment>
+            </div>
         )
     }
 }
