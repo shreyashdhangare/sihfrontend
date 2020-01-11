@@ -16,6 +16,8 @@ import SchemeInfo from './SchemeInfo'
 import ViewMyFinance from './ViewMyFinance'
 import Start_w from './Start_w'
 import Simulator from './Simulator'
+import LoanCalculator from './LoanCalculator'
+
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -92,6 +94,10 @@ export default class Account extends Component {
                      <Route path={`${this.props.match.path}/start_w`}
                     render={(props) => (<Start_w {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
+                     <Route path={`${this.props.match.path}/loancalculator`}
+                    render={(props) => (<LoanCalculator {...props} aadharid={this.state.aadharid} />)}
+                    ></Route>
+                    
                     <Route exact path={`${this.props.match.path}/selectcrop/:farmid`} component={selectAddCrop}></Route>
                     <Route exact path={`${this.props.match.path}/schemes`} component={Schemes}></Route>
                     <Route exact path={`${this.props.match.path}/scheme-info/:tagname`} component={SchemeInfo}></Route>

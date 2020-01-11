@@ -72,6 +72,8 @@ export default class Finance extends Component {
              <div class="row" >
                  <div class="col-lg-3" style={{backgroundColor:"e9faff"}}>
               <Link to={"/account/viewmyfinance"} className="btn bg-blue-ui white read">VIEW MY TRANSACTIONS</Link> 
+              <Link to={"/account/loancalculator"} className="btn bg-blue-ui white read">MORTGAGE CALCULATOR</Link>  
+
                 </div>
             </div> 
              
