@@ -21,7 +21,7 @@ export default class FarmTile extends Component {
                              <div className="item-box-blog-body">
                                 <div className="item-box-blog-heading">
                                     
-                                        <h5>Farm Name</h5>
+                                        <h5>Pune Farm</h5>
                                     
                                 </div>
                                         <div className="item-box-blog-data">

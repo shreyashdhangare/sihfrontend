@@ -58,7 +58,7 @@ class vendorshowmsp extends Component{
 render(){
     return(
 <div>
-            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Maximum Support Price</h1>
+            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Minimum Support Price</h1>
             <table id='students'style={{textAlign:"center",fontFamily:"Arial,Helvetica,sans-serif,sans-serif",borderCollapse:"collapse",border:"3px solid #ddd",width:"100%"}}>
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>

@@ -1,11 +1,21 @@
 import React, {Component} from 'react'
 // import Chart from './Chart'
 import axios from 'axios'
+import Govtaddmsp from './Govtaddmsp'
 
 class govtmsp extends Component{
     constructor(props){
         super(props);
         this.state={
+            loopActive: false,
+            croppost:[{
+                aadharid:'1234567890',
+                crop:'',
+                variety:'',
+                price:'',
+                date:''
+            }],
+
             msp: [
                 {
                     "date": "2020-01-01",
@@ -15,8 +25,26 @@ class govtmsp extends Component{
                 }
              ]
         }
+        this.onToggleLoop = this.onToggleLoop.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
    
     }
+
+    handleChange(event) {
+        this.setState({croppost: event.target.value});
+      }
+      
+  handleSubmit(event) {
+      console.log(this.state.croppost)
+    alert('A name was submitted: ' + this.state.croppost);
+    event.preventDefault();
+  }
+
+
+
+    
    
        
         componentDidMount(){
@@ -55,10 +83,52 @@ class govtmsp extends Component{
                )
             })
          }
+
+        //  submitHandler =(e) =>{ 
+        //     e.preventDefault() ;
+        //     console.log(this.state.croppost[0])
+        //     axios.post('http://localhost:8080/govt/upload/msp',this.state.croppost[0])
+        //     .then(response => { console.log(response)})
+        //     .catch(error => { console.log(error)})
+        // }
+    
+        // handleType = (event) =>{   this.setState({croppost:event.target.value})    }    
+        // handleWarning = (event) =>{   this.setState({warning:event.target.value})    }   
+
+
+
 render(){
+    const {crop,variety,price,date}=this.state.croppost
+
     return(
+
+        <div>
+            <br/>
+          <div className="d-flex justify-content-center">
+        <form className="col-md-12" onSubmit={this.handleSubmit}>
+                <div class="form-row">
+                    <div class="form-group col-md-3 " >
+                    <input type="text" class="form-control" id="crop" value={this.state.croppost.crop} onChange={this.handleChange} placeholder="Crop"></input>
+                    </div>
+                    <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="variety" value={this.state.croppost.variety} onChange={this.handleChange} placeholder="variety"></input>
+                    </div>
+                    <div class="col-sm-2 form-group">
+                     <input type="number" id="price" placeholder="in Rs" value={this.state.croppost.price} onChange={this.handleChange} class="form-control" />
+                 </div>
+                    <div class="form-group col-md-2">
+                    <input type="date" class="form-control" value={this.state.croppost.date} onChange={this.handleChange} id="date" ></input>
+                    </div>
+                 <div class="form-group col-md-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+                </div>
+                </form>
+                
+            </div>
 <div>
-            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Maximum Support Price</h1>
+            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Minimum Support Price</h1>
             <table id='students'style={{textAlign:"center",fontFamily:"Arial,Helvetica,sans-serif,sans-serif",borderCollapse:"collapse",border:"3px solid #ddd",width:"100%"}}>
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>
@@ -66,7 +136,14 @@ render(){
                </tbody>
             </table>
          </div>
+         </div>
     )
+}
+
+onToggleLoop(event) {
+    // "this is undefined??" <--- here
+    this.setState({loopActive: !this.state.loopActive})
+    console.log(this.state.loopActive)
 }
 }
 export default govtmsp

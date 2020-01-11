@@ -27,13 +27,13 @@ class Vendor extends Component{
                
             <Navbarganesh
               text1="Add crops" Link1={`${this.props.match.path}/vendoraddcrops`}
-              text2="Buy crops" Link2={`${this.props.match.path}/FeedComponent`}
+              text2="Buy crops" Link2={`${this.props.match.path}/vendorbuycrops`}
               text3="View prices" Link3={`${this.props.match.path}/vendorviewprices`}
               text4="Minimum Support Price" Link4={`${this.props.match.path}/vendorshowmsp`}/> 
                <Switch>
                  
                  <Route  exact path={`${this.props.match.path}/vendoraddcrops`} component={vendoraddcrops}></Route>
-                 <Route path={`${this.props.match.path}/FeedComponent`} component={FeedComponent}></Route>
+                 <Route path={`${this.props.match.path}/vendorbuycrops`} component={vendorbuycrops}></Route>
                  <Route  exact path={`${this.props.match.path}/vendorviewprices`} component={vendorviewprices}></Route>
                  <Route path={`${this.props.match.path}/vendorshowmsp`} component={vendorshowmsp}></Route>
 

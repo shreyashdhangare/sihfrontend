@@ -95,6 +95,7 @@ export default class Account extends Component {
                     <Route exact path={`${this.props.match.path}/selectcrop/:farmid`} component={selectAddCrop}></Route>
                     <Route exact path={`${this.props.match.path}/schemes`} component={Schemes}></Route>
                     <Route exact path={`${this.props.match.path}/scheme-info/:tagname`} component={SchemeInfo}></Route>
+                    <Route exact path={`${this.props.match.path}/weather`} component={Start_w}></Route>
 
 
                 </Switch>

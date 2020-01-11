@@ -34,8 +34,8 @@ class MyFarm extends Component {
      getFarms=()=>
     {
         console.log("made request with aadharid" + this.state.aadharid)
-         axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
-        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
+         //axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
+        axios.get('http://192.168.43.148:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
         .then(response => {  
         this.setState({posts:response.data,
                         gotData:"1"}) 
@@ -106,8 +106,8 @@ class MyFarm extends Component {
                                 {
                                      posts.length ?
                                             posts.map(post=>
-                                            <div className="col-md-4" key={post.id}>
-                                            <FarmTile farmid={post.id}></FarmTile>
+                                            <div className="col-md-4" key={post.farmid}>
+                                            <FarmTile farmid={post.farmid}></FarmTile>
                                             </div>) 
                                     :null
                                 }

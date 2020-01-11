@@ -7,10 +7,10 @@ class vendorbuycrops extends Component{
         super(props);
         this.state={
             students: [
-                { id: 1, name: 'Wasif', age: 21, email: 'wasif@email.com' },
-                { id: 2, name: 'Ali', age: 19, email: 'ali@email.com' },
-                { id: 3, name: 'Saad', age: 16, email: 'saad@email.com' },
-                { id: 4, name: 'Asad', age: 25, email: 'asad@email.com' }
+                { id: 1, name: 'Wasif', contact: 1234567890, email: 'wasif@email.com' },
+                { id: 2, name: 'Ali', contact: 1234567890, email: 'ali@email.com' },
+                { id: 3, name: 'Saad', contact: 1234567890, email: 'saad@email.com' },
+                { id: 4, name: 'Asad',contact: 1234567890, email: 'asad@email.com' }
              ]
         }
    
@@ -32,13 +32,13 @@ class vendorbuycrops extends Component{
      }
     renderTableData() {
         return this.state.students.map((student, index) => {
-           const { id, name, age, email } = student //destructuring
+           const { id, name, contact, email } = student //destructuring
            return (
                
               <tr key={id} style={{border:"1px solid #ddd",padding:"8px"}}>
                  <td>{id}</td>
                  <td>{name}</td>
-                 <td>{age}</td>
+                 <td>{contact}</td>
                  <td>{email}</td>
               </tr>
            )
@@ -75,7 +75,7 @@ class vendorbuycrops extends Component{
             </div>
         </form>
         <div>
-            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >React Dynamic Table</h1>
+            <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Providers</h1>
             <table id='students'style={{textAlign:"center",fontFamily:"Arial,Helvetica,sans-serif,sans-serif",borderCollapse:"collapse",border:"3px solid #ddd",width:"100%"}}>
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>

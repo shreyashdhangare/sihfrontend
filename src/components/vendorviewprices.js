@@ -70,7 +70,7 @@ class vendorviewprices extends Component{
             return(
         <div>
 
-                    <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >React Dynamic Table</h1>
+                    <h1 id='title' style={{textAlign:"center",fontSize:"20px"}} >Market prices</h1>
                     <table id='posts'style={{textAlign:"center",fontFamily:"Arial,Helvetica,sans-serif,sans-serif",borderCollapse:"collapse",border:"3px solid #ddd",width:"100%"}}>
                        <tbody>
                        <tr>{this.renderTableHeader()}</tr>
