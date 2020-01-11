@@ -1,8 +1,31 @@
 import React, { Component } from 'react'
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
 import Schemes from './Schemes'
+import axios from 'axios'
+import Start_w from './Start_w'
 export default class BlogpostComponent extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = ( {
+             posts : []
+        })
+    }
+    
+     componentDidMount () {
+         //axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
+         axios.get('http://192.168.43.148:8080/farmer/show/warning')
+         .then(Response =>{
+             console.log(Response)
+             this.setState ({posts:Response.data})
+         })
+         .catch(error =>{
+             console.log(error)
+         })
+     }
     render() {
+        const {posts} = this.state
+
         return (
             <div>
                 <div className="container">
@@ -75,19 +98,43 @@ export default class BlogpostComponent extends Component {
 
                    
                     <div className="col-md-4">
-
+                  
                         
-                        <div className="card my-4">
-                        <h5 className="card-header">Search</h5>
-                        <div className="card-body">
-                            <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Search for..."/>
-                            <span className="input-group-btn">
-                                <button className="btn btn-secondary" type="button">Go!</button>
-                            </span>
-                            </div>
-                        </div>
-                        </div>
+                  <div className="card my-4">
+                  <Start_w/> 
+                  <h5 className="card-header">Warnings</h5>
+                  <div className="card-body">
+                  <div className="row">
+                      <div className="col-lg-6">
+                      <table class="table">
+                      <tbody>
+                      <tr>
+                          <th>Type</th>
+                          <th>Reason</th>
+                      </tr>
+                      {/* <ul className="list-unstyled mb-0"> */}
+                      {
+                  
+                          posts.length ?
+                          posts.map( posts => 
+                                  <div key = {posts.id}>
+
+                                  <tr>
+                                  <td>{posts.type}</td>
+                                  <td>{posts.info}</td>
+                                  </tr>
+                                   {/* <li>{posts.type}:{posts.info}</li> */}
+                                  </div> )  :
+                          null    
+                       }
+                         
+                      {/* </ul> */}
+                      </tbody>
+                      </table>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
 
                         
                         <div className="card my-4">

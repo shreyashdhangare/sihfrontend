@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 import TimePicker from 'react-time-picker';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { Redirect } from 'react-router-dom'
 
 
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
@@ -32,6 +32,7 @@ export default class Finance extends Component {
             Receipt:'',
             time:'00:00:00',
             date:new Date('2019-01-01'),
+            sentData:"0"
 
         }
 
@@ -40,6 +41,7 @@ export default class Finance extends Component {
     submitHandler =(e) =>{ 
         e.preventDefault() ;
         console.log(this.state)
+        this.setState({sentData:'1'})
         axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
         .then(response => { console.log(response)})
         .catch(error => { console.log(error)})
@@ -61,10 +63,24 @@ export default class Finance extends Component {
           };
 
         const {Type,Source,Amount,Date,Time}=this.state
+        if(this.state.sentData==="1")
+        return <Redirect to={'/account'}/>
+     
         return (
-            <div className="limiter">
+
+            <div>
+             <div class="row" >
+                 <div class="col-lg-3" style={{backgroundColor:"e9faff"}}>
+              <Link to={"/account/viewmyfinance"} className="btn bg-blue-ui white read">VIEW MY TRANSACTIONS</Link> 
+                </div>
+            </div> 
+             
+             {/* <div className="limiter">  */}
+             
             <div className="container-login100">
+                
                 <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                    
                 <form onSubmit={this.submitHandler}>
                     <div>
                         <label><b>Choose type</b></label>
@@ -74,7 +90,7 @@ export default class Finance extends Component {
                         <option value="Income">Income</option>
                     </select>
                     </div>
-                    <div> <br></br> </div>
+                    <div> <br/><br/> </div>
                  
                     <label><b>Source</b></label>
                     <div className="wrap-input100 rs1 validate-input">
@@ -83,7 +99,7 @@ export default class Finance extends Component {
                             <span className="focus-input100-2"></span>
                     </div>
 
-                    <div><br></br> </div>
+                    <div><br/> </div>
 
                     <label><b>Amount</b></label>
                     <div className="wrap-input100 rs1 validate-input">
@@ -92,9 +108,9 @@ export default class Finance extends Component {
                             <span className="focus-input100-2"></span>
                     </div>
 
-                    <div><br></br> </div>
+                    <div><br/> </div>
                     <div>
-                    <label><b>Date  &emsp;</b></label>
+                    <label><b>Date : &emsp;</b></label>
                      {/* <input type="date"  selected ={this.state.date} onChange={this.handleChange}/>  */}
                      <DatePicker
                         selected={this.state.date}
@@ -105,7 +121,7 @@ export default class Finance extends Component {
                     </div>
                     <br/>
                     <div>
-                        <label><b>Time</b></label>
+                        <label><b>Time :&emsp;</b></label>
                         <TimePicker
                         onChange={this.onChange}
                         value={this.state.time}
@@ -123,6 +139,7 @@ export default class Finance extends Component {
                 </div>
                 </div>
                 </div>
+                //  </div>
         )
     }
 }

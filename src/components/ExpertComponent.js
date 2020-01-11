@@ -1,8 +1,7 @@
-import React, { Component,useState } from 'react'
-//  import Component1 from "@reactions/component";
+import React, { Component} from 'react'
 import {Link} from 'react-router-dom'
 import './resources/css/navbar.css'
-import {SideSheet,Paragraph,Button} from 'evergreen-ui'
+import './resources/css/navbar.css'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
@@ -15,11 +14,18 @@ import './resources/vendor/select2/select2.min.css'
 import './resources/vendor/daterangepicker/daterangepicker.css'
 import './resources/css/util.css'
 import './resources/css/main.css'
-
 import { Container, Row, Col } from 'reactstrap';
 // import Popup from "reactjs-popup";
 
-export default class ExpertComponent extends React.Component {
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: 200,
+//     },
+//   },
+// }));
+export default class ExpertComponent extends Component {
   constructor(props) {
     super(props)
     
@@ -30,7 +36,7 @@ export default class ExpertComponent extends React.Component {
 
  componentDidMount () {
      //axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
-     axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012",type:"asd"}})
+     axios.get('http://192.168.43.148:8080/forum/show/question',{params:{aadharid:"123456789012",type:"my"}})
      .then(Response =>{
          console.log(Response)
          this.setState ({posts:Response.data})
@@ -43,45 +49,31 @@ export default class ExpertComponent extends React.Component {
  
   render() {
     const {posts} = this.state
- 
+    // const newTo={
+    //   pathname:"/accountexpert/answerquestion"+this.state.qid;
+    // }
+    // const handleChange = event => {
+    //   setValue(event.target.value);
+    // };
+
+    // const classes = useStyles();
+    // const [value, setValue] = React.useState('Controlled');
+  
       return (
 
+        
           <div>
-               <div className="topnav" style={{position:"sticky"}}>
-                  <Link to="/accountexpert">Home</Link>
-                  <Link to="/issuewarning">Issue Warning</Link>
-                  <Link to="/">View Warning</Link>
-                
-                  <Link to="/signinexpert"><button style={{fontSize:"17px",color:"#ffffff",align:"right"}}><i class="fa fa-sign-out"></i></button></Link>
-                  
-              </div><br/> 
 
-              
-             
-              
-              {/* <Popup trigger={<button>Answer question</button>} position="top left">
-              {close => (
-                <div>
-                  <input type="textarea"/>
-                  <a className="close" onClick={close}>
-                    &times;
-                  </a>
-                </div>
-              )}
-            </Popup> */}
-              
-              
-                       
                    {posts.length ? 
                  posts.map( posts => 
                         <div key = {posts.id}>
                             
-                            <Container style={{ backgroundColor:"#f5f2f2",borderRadius:"10px"}}>
+              <Container style={{ backgroundColor:"#e0dede",borderRadius:"10px",borderWidth:"20px",borderColor:"black   "}}>
                 <Row style={{height:"2vh"}}>  </Row>
                   <Container style={{ backgroundColor:"#ffffff",borderRadius:"10px" }}>
                     <Row >
                       <Col xs="1"></Col>
-                 <p style={{fontSize:"20px" , fontColour:"#ffffff",padding:"5px"}} >{posts.title}</p>
+                        <p style={{fontSize:"20px" , fontColour:"#ffffff",padding:"5px"}}>{posts.question}</p>
                       <Col xs="1"></Col>
                     </Row>
                   </Container>
@@ -89,35 +81,46 @@ export default class ExpertComponent extends React.Component {
               
                 <Row style={{height:"6vh"}}>
                   <Col sm="3"></Col>
-                  <Col sm="4"><button style={{backgroundColor: "#4272d7" , marginTop:"5px",padding:"10px" ,borderRadius:"10px"}}><b style={{color:"#ffffff"}}>Answer this question</b></button></Col>
-                  <Col><button style={{backgroundColor: "#4272d7" , marginTop:"5px",padding:"10px" ,borderRadius:"10px"}}><b style={{color:"#ffffff"}}>View Answers</b></button></Col>
+                  {/* <Popover
+                    bringFocusInside
+                    content={
+                      <Pane
+                        width={320}
+                        height={320}
+                        paddingX={40}
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        flexDirection="column"
+                      >
+                            <TextField
+                                id="outlined-multiline-flexible"
+                                label="Multiline"
+                                multiline
+                                rowsMax="4"
+                                value={value}
+                                onChange={handleChange}
+                                variant="outlined"
+                              />
+                        <br/>
+                        <Button>Submit</Button>
+                      </Pane>
+                    }
+                  >
+                    <Button style={{ marginTop:"5px",padding:"10px" ,borderRadius:"10px"}}>Answer this question</Button>
+                  </Popover> */}
+                  <Col sm="4"><Link to={"/accountexpert/answerquestion"}> <button style={{backgroundColor: "#4CAF50" , marginTop:"5px",padding:"10px" ,borderRadius:"10px"}}><b style={{color:"#ffffff"}}>Answer this question</b></button></Link></Col>  
+                  
+                  <Col><Link to={"/accountexpert/viewanswers"}><button style={{backgroundColor: "#4CAF50" , marginTop:"5px",padding:"10px" ,borderRadius:"10px"}}><b style={{color:"#ffffff"}}>View Answers</b></button></Link></Col>
                 </Row>
               
-                <Row style={{height:"2vh"}}>  </Row>
+                <Row style={{height:"3vh"}}>  </Row>
               </Container>
-              <Row style={{height:"2vh"}}>  </Row>   
+                <Row style={{height:"2vh"}}>  </Row>   
                         </div> )  :
-                  null    
-                              } 
-          
-          {/* <Component initialState={{ isShown: false }}>
-  {({ state, setState }) => (
-    <React.Fragment>
-      <SideSheet
-        // position={Position.TOP}
-        isShown={state.isShown}
-        onCloseComplete={() => setState({ isShown: false })}
-      >
-        <Paragraph margin={40}>Basic Example</Paragraph>
-      </SideSheet>
-      <Button onClick={() => setState({ isShown: true })}>
-        Show Basic Side Sheet
-      </Button>
-    </React.Fragment>
-  )}
-</Component> */}
-  
- 
+                      null    
+                    } 
+
           </div>
       )
   }

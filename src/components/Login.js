@@ -8,7 +8,9 @@ import SignUpExpert from './SignUpExpert'
 import AccountExpert from './AccountExpert'
 import IssueWarning from './IssueWarning.js'
 import govtmain from './govtmain'
-;import Vendor from './Vendor'
+import Vendor from './Vendor'
+import ViewWarning from './ViewWarning'
+
 
 class Login extends Component {
 
@@ -24,6 +26,8 @@ class Login extends Component {
                     <Route  path="/signupexpert" component={SignUpExpert}></Route>
                     <Route  path="/accountexpert" component={AccountExpert}></Route>
                     <Route  path="/issuewarning" component={IssueWarning}></Route>
+                    <Route  path="/viewwarning" component={ViewWarning}></Route>
+
                     <Route  path="/Vendor" component={Vendor}></Route>
                     <Route  path="/govtmain" component={govtmain}></Route>
                     

@@ -13,6 +13,9 @@ import Footer from './Footer'
 import Finance from './Finance'
 import Schemes from './Schemes'
 import SchemeInfo from './SchemeInfo'
+import ViewMyFinance from './ViewMyFinance'
+import Start_w from './Start_w'
+
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -82,6 +85,12 @@ export default class Account extends Component {
                     ></Route>
                     <Route path={`${this.props.match.path}/farmdetails/:farmid`}
                     render={(props) => (<FarmDetails {...props} aadharid={this.state.aadharid} />)}
+                    ></Route>
+                     <Route path={`${this.props.match.path}/viewmyfinance`}
+                    render={(props) => (<ViewMyFinance {...props} aadharid={this.state.aadharid} />)}
+                    ></Route>
+                     <Route path={`${this.props.match.path}/start_w`}
+                    render={(props) => (<Start_w {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
                     <Route exact path={`${this.props.match.path}/selectcrop/:farmid`} component={selectAddCrop}></Route>
                     <Route exact path={`${this.props.match.path}/schemes`} component={Schemes}></Route>
