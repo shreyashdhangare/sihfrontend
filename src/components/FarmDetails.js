@@ -36,8 +36,8 @@ export default class FarmDetails extends Component {
      getCrops=()=>
     {
         console.log( "hellofrom axios" ) 
-         axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
-        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
+             axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
+        //axios.get('http://192.168.43.148:8080/farmer/show/crop',{params:{farmid:this.state.farmid}})
         .then(response => {  
         this.setState({posts:response.data,
                         gotData:"1"}) 

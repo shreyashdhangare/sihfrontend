@@ -15,7 +15,7 @@ import Schemes from './Schemes'
 import SchemeInfo from './SchemeInfo'
 import ViewMyFinance from './ViewMyFinance'
 import Start_w from './Start_w'
-
+import Simulator from './Simulator'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -96,6 +96,7 @@ export default class Account extends Component {
                     <Route exact path={`${this.props.match.path}/schemes`} component={Schemes}></Route>
                     <Route exact path={`${this.props.match.path}/scheme-info/:tagname`} component={SchemeInfo}></Route>
                     <Route exact path={`${this.props.match.path}/weather`} component={Start_w}></Route>
+                    <Route exact path={`${this.props.match.path}/simulator`} component={Simulator}></Route>
 
 
                 </Switch>
