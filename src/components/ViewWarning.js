@@ -15,7 +15,7 @@ export default class ViewWarning extends Component {
     
      componentDidMount () {
          //axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
-         axios.get('https://jsonplaceholder.typicode.com/posts?userId=1',{params:{aadharid:"123456789012",type:"asd"}})
+         axios.get('http://192.168.43.148:8080/farmer/show/warning',{params:{aadharid:"123456789012",type:"asd"}})
          .then(Response =>{
              console.log(Response)
              this.setState ({posts:Response.data})
@@ -42,11 +42,14 @@ export default class ViewWarning extends Component {
                         
                         posts.length ?
                         posts.map( posts => 
-                                <div key = {posts.id}>
-                 <div class="row" style={{backgroundColor:"#e0dede",borderRadius:"20px"}}><p style={{padding:"10px",color:"#d61c1f"}}>Warning 1 goes here</p></div>
-                 <div class="row" style={{height:"1vh"}}></div>
+                        <div key = {posts.id}>
+                             { 
+                                    (posts.type === 'weather')
+                                    ?  <div class="row" style={{height:"7vh",backgroundColor:"#e0dede"}}><div class="col-lg-4" ><h3 style={{fontSize:"20px"}}>{posts.info}</h3></div></div>    
+                                :<div></div>
+                            }
 
-                                </div> )  :
+                        </div> )  :
                         null    
                     }
 
@@ -65,11 +68,14 @@ export default class ViewWarning extends Component {
                         
                         posts.length ?
                         posts.map( posts => 
-                                <div key = {posts.id}>
-                 <div class="row" style={{backgroundColor:"#e0dede",borderRadius:"20px"}}><p style={{padding:"10px",color:"#d61c1f"}}>Warning 1 goes here</p></div>
-                 <div class="row" style={{height:"1vh"}}></div>
+                        <div key = {posts.id}>
+                             { 
+                                    (posts.type === 'pestattack')
+                                   ? <div class="row" style={{height:"7vh",backgroundColor:"#e0dede"}}><div class="col-lg-4" ><h3 style={{fontSize:"20px"}}>{posts.info}</h3></div></div>    
+                                :<div></div>
+                            }
 
-                                </div> )  :
+                        </div> )  :
                         null    
                     }
 
@@ -87,13 +93,17 @@ export default class ViewWarning extends Component {
                         
                         posts.length ?
                         posts.map( posts => 
-                                <div key = {posts.id}>
-                 <div class="row" style={{backgroundColor:"#e0dede",borderRadius:"20px"}}><p style={{padding:"10px",color:"#d61c1f"}}>Warning 1 goes here</p></div>
-                 <div class="row" style={{height:"1vh"}}></div>
+                        <div key = {posts.id}>
+                             { 
+                                    (posts.type === 'general')
+                                    ?  <div class="row" style={{height:"7vh",backgroundColor:"#e0dede"}}><div class="col-lg-4" ><h3 style={{fontSize:"20px"}}>{posts.info}</h3></div></div>    
+                                :<div></div>
+                            }
 
-                                </div> )  :
+                        </div> )  :
                         null    
                     }
+
 
                 </div>
             </div>

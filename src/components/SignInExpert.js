@@ -62,7 +62,7 @@ export class SignInExpert extends Component {
                             <input className="input100" type="text" name="expertid" value={expertid} onChange={this.changeHandler} placeholder="AdhaarID"></input>
                             <span className="focus-input100-1"></span>
                             <span className="focus-input100-2"></span>
-                        </div>
+                        </div><br/>
 
                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
                             <input className="input100" type="password" name="password" value={password} onChange={this.changeHandler} placeholder="Password"></input>
@@ -78,7 +78,7 @@ export class SignInExpert extends Component {
 
                         <div className="container-login100-form-btn m-t-20">
                             <Link to='/signupexpert'> New Here? Let's Sign Up </Link>
-                            &emsp;&emsp;&emsp;
+                            &emsp;&emsp;
                             <Link to='/'>Sign Up as Farmer Instead</Link>   
                         </div>
 

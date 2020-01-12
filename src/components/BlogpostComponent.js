@@ -101,40 +101,32 @@ export default class BlogpostComponent extends Component {
                     <div className="col-md-4">
                   
                         
-                  <div className="card my-4">
+                    <div className="card my-4">
                   <Start_w/> 
                   <h5 className="card-header">Warnings</h5>
-                  <div className="card-body">
-                  <div className="row">
-                      <div className="col-lg-6">
-                      <table class="table">
-                      <tbody>
-                      <tr>
-                          <th>Type</th>
-                          <th>Reason</th>
-                      </tr>
-                      {/* <ul className="list-unstyled mb-0"> */}
-                      {
                   
-                          posts.length ?
-                          posts.map( posts => 
-                                  <div key = {posts.id}>
-
-                                  <tr>
-                                  <td>{posts.type}</td>
-                                  <td>{posts.info}</td>
-                                  </tr>
-                                   {/* <li>{posts.type}:{posts.info}</li> */}
-                                  </div> )  :
-                          null    
-                       }
-                         
-                      {/* </ul> */}
-                      </tbody>
-                      </table>
-                      </div>
-                  </div>
-                  </div>
+                   <div className="card-body">
+                   <div class="row">
+                                <div class="col-lg-6">Type</div>
+                                <div class="col-lg-6">Reason</div>
+                    </div>  
+                    <div class="row" style={{height:"0.5vh"}}></div>
+                    <div class="row" style={{backgroundColor:"#d3d3d3",height:"0.3vh"}}></div>
+                   {
+                  
+                  posts.length ?
+                  posts.map( posts => 
+                     <div key = {posts.id}>
+                            <div class="row">
+                                <div class="col-lg-6">{posts.type}</div>
+                                <div class="col-lg-6">{posts.info}</div>
+                            </div>  
+                        
+                    </div> )  :
+                  null    
+               }
+                 
+                  </div> 
                   </div>
 
                         

@@ -17,7 +17,7 @@ import ViewMyFinance from './ViewMyFinance'
 import Start_w from './Start_w'
 import Simulator from './Simulator'
 import LoanCalculator from './LoanCalculator'
-
+import Forecast from './Forecast'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -91,6 +91,9 @@ export default class Account extends Component {
                      <Route path={`${this.props.match.path}/viewmyfinance`}
                     render={(props) => (<ViewMyFinance {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
+                     <Route path={`${this.props.match.path}/forecast`}
+                    render={(props) => (<Forecast {...props} aadharid={this.state.aadharid} />)}
+                    ></Route> 
                      <Route path={`${this.props.match.path}/start_w`}
                     render={(props) => (<Start_w {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
