@@ -20,6 +20,7 @@ import LoanCalculator from './LoanCalculator'
 import Forecast from './Forecast'
 import Recommend from './Recommend'
 import GetYeild from './Getyeild'
+import mandi from './mandi.js';
 
 export default class Account extends Component {
     constructor(props) {
@@ -110,8 +111,7 @@ export default class Account extends Component {
                     <Route exact path={`${this.props.match.path}/weather`} component={Start_w}></Route>
                     <Route exact path={`${this.props.match.path}/simulator`} component={Simulator}></Route>
                     <Route exact path={`${this.props.match.path}/getrecommend`} component={Recommend}></Route>
-                    <Route exact path={`${this.props.match.path}/getyeild`} component={GetYeild}></Route>
-
+                    <Route exact path={`${this.props.match.path}/mandi`} component={mandi}></Route>
 
                 </Switch>
                 </div>

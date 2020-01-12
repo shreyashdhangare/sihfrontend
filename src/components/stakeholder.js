@@ -28,7 +28,7 @@ class stakeholder extends Component{
                  text3="Broadcast" Link3={`${this.props.match.path}/broadcast`}
                  text4="Minimum Support Price" Link4={`${this.props.match.path}/govtmsp`}/> 
                   <Switch>
-                    
+                    <Route  exact path={`${this.props.match.path}/`} component={stakeholdergraphs}></Route>
                     <Route  exact path={`${this.props.match.path}/stakeholdergraphs`} component={stakeholdergraphs}></Route>
                     <Route path={`${this.props.match.path}/broadcast`} component={broadcast}></Route>
                     <Route  exact path={`${this.props.match.path}/govtschemes`} component={govtschemes}></Route>

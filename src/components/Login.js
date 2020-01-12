@@ -11,6 +11,7 @@ import govtmain from './govtmain'
 import Vendor from './Vendor'
 import ViewWarning from './ViewWarning'
 import stakeholder from './stakeholder'
+import mandi from './mandi.js';
 
 
 class Login extends Component {
@@ -29,6 +30,8 @@ class Login extends Component {
                     <Route  path="/issuewarning" component={IssueWarning}></Route>
                     <Route  path="/viewwarning" component={ViewWarning}></Route>
                     <Route  path="/stakeholder" component={stakeholder}></Route>
+                    <Route  path="/mandi" component={mandi}></Route>
+
 
 
                     <Route  path="/Vendor" component={Vendor}></Route>

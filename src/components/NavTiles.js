@@ -119,7 +119,7 @@ export default class NavTiles extends Component {
                         </p>
                     </div>
                     <div className="card-footer">
-                        <a href="/account/myfarm" className="btn btn-primary">Go to Mandi</a>
+                        <a href="/account/mandi" className="btn btn-primary">Go to Mandi</a>
                     </div>
                     </div>
                 </div>
