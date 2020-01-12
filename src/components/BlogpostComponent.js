@@ -3,6 +3,7 @@ import './resources/vendor/bootstrap/css/bootstrap.min.css'
 import Schemes from './Schemes'
 import axios from 'axios'
 import Start_w from './Start_w'
+import ChartBotComp from './ChatBotComp'
 export default class BlogpostComponent extends Component {
     constructor(props) {
         super(props)
@@ -173,6 +174,9 @@ export default class BlogpostComponent extends Component {
 
                         
                        <Schemes/>
+                       <h3>Got trouble? I am here for you!</h3>
+                       <ChartBotComp search="1"/>
+                            
 
                     </div>
 
