@@ -29,7 +29,7 @@ export class SignIn extends Component {
     submitHandler =(e) =>{ 
         e.preventDefault() ;
         console.log(this.state)
-        axios.post('http://192.168.43.86:5000/q',{params:{State_Name:this.state.State_Name,Season:this.state.Season,Crop:this.state.Crop,District_Name:this.state.District_Name}})
+        axios.get('http://localhost:5000/q',{params:{State_Name:this.state.State_Name,Season:this.state.Season,Crop:this.state.Crop,District_Name:this.state.District_Name}})
         .then(response => { 
         console.log(response.data)
        // if(response.data.id===101)

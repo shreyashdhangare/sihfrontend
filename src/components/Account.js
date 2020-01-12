@@ -112,6 +112,8 @@ export default class Account extends Component {
                     <Route exact path={`${this.props.match.path}/simulator`} component={Simulator}></Route>
                     <Route exact path={`${this.props.match.path}/getrecommend`} component={Recommend}></Route>
                     <Route exact path={`${this.props.match.path}/mandi`} component={mandi}></Route>
+                    <Route exact path={`${this.props.match.path}/getyeild`} component={GetYeild}></Route>
+
 
                 </Switch>
                 </div>

@@ -4,11 +4,16 @@ import {Link} from 'react-router-dom'
 
 
 export default class GetYield extends Component {
-    
-    state={
-        gotData:"0",
-        prediction:this.props.state.prediction
+    constructor(props)
+    {
+        super(props)
+        this.state={
+            gotData:"0",
+            prediction:this.props.location.state.prediction
+        }
+
     }
+    
     // componentDidMount()
     // {
     //     //axios.get('http://192.168.43.148:8080/farmer/show/scheme/tags')
@@ -30,27 +35,11 @@ export default class GetYield extends Component {
     
     render() {
         const {posts} =this.state
+        console.log(this.state.prediction+"dwefwefw3frw3rwr")
         return (
             <div>
-                
-                <div className="card my-4">
-                        <h5 className="card-header">Prediction</h5>
-                        <div className="card-body">
-                            
-                        <div className="row-lg-2">
-                                    <div className="col-lg-6">
-
-                                   
-                                <ul className="list-unstyled mb-0">
-                                    <li>{posts.username}</li>
-                                </ul>
-                                    </div>
-                                </div>
-                           
-                        </div>
-                        </div>
-
-
+                <h2>The predicted Yeild is :</h2>
+                 <h3>{this.state.prediction}</h3> <h3>in quintals</h3>           
             </div>
         )
     }
