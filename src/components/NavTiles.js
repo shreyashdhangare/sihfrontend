@@ -28,7 +28,7 @@ export default class NavTiles extends Component {
                         </p>
                     </div>
                     <div className="card-footer">
-                        <a href="/account" className="btn btn-primary">Get recommendations</a>
+                        <a href="/account/getrecommend" className="btn btn-primary">Get recommendations</a>
                     </div>
                     </div>
                 </div>

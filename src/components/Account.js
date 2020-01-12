@@ -18,6 +18,9 @@ import Start_w from './Start_w'
 import Simulator from './Simulator'
 import LoanCalculator from './LoanCalculator'
 import Forecast from './Forecast'
+import Recommend from './Recommend'
+import GetYeild from './Getyeild'
+
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -106,6 +109,8 @@ export default class Account extends Component {
                     <Route exact path={`${this.props.match.path}/scheme-info/:tagname`} component={SchemeInfo}></Route>
                     <Route exact path={`${this.props.match.path}/weather`} component={Start_w}></Route>
                     <Route exact path={`${this.props.match.path}/simulator`} component={Simulator}></Route>
+                    <Route exact path={`${this.props.match.path}/getrecommend`} component={Recommend}></Route>
+                    <Route exact path={`${this.props.match.path}/getyeild`} component={GetYeild}></Route>
 
 
                 </Switch>
