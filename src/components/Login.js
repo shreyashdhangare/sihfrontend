@@ -10,6 +10,7 @@ import IssueWarning from './IssueWarning.js'
 import govtmain from './govtmain'
 import Vendor from './Vendor'
 import ViewWarning from './ViewWarning'
+import stakeholder from './stakeholder'
 
 
 class Login extends Component {
@@ -27,6 +28,8 @@ class Login extends Component {
                     <Route  path="/accountexpert" component={AccountExpert}></Route>
                     <Route  path="/issuewarning" component={IssueWarning}></Route>
                     <Route  path="/viewwarning" component={ViewWarning}></Route>
+                    <Route  path="/stakeholder" component={stakeholder}></Route>
+
 
                     <Route  path="/Vendor" component={Vendor}></Route>
                     <Route  path="/govtmain" component={govtmain}></Route>
