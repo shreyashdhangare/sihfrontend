@@ -7,26 +7,26 @@ export default class GetYield extends Component {
     
     state={
         gotData:"0",
-        posts:[]
+        prediction:this.props.state.prediction
     }
-    componentDidMount()
-    {
-        axios.get('http://192.168.43.148:8080/farmer/show/scheme/tags')
-        //axios.get('https://jsonplaceholder.typicode.com/users')
-        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
-        .then(response => {  
-            console.log(response)
-        this.setState({posts:response.data,
-                        gotData:"1"}) 
-        }
-        ) 
-        .catch(
+    // componentDidMount()
+    // {
+    //     //axios.get('http://192.168.43.148:8080/farmer/show/scheme/tags')
+    //     //axios.get('https://jsonplaceholder.typicode.com/users')
+    //     //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
+    //     .then(response => {  
+    //         console.log(response)
+    //     this.setState({posts:response.data,
+    //                     gotData:"1"}) 
+    //     }
+    //     ) 
+    //     .catch(
             
-            error=>{ 
-                this.setState({error:"No Schemes Found"})
-                console.log(error) }
-            )
-    }
+    //         error=>{ 
+    //             this.setState({error:"No Schemes Found"})
+    //             console.log(error) }
+    //         )
+    // }
     
     render() {
         const {posts} =this.state

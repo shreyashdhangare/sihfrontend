@@ -42,7 +42,9 @@ export default class Finance extends Component {
         e.preventDefault() ;
         console.log(this.state)
         this.setState({sentData:'1'})
-        axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
+        axios.post('http://192.168.43.148:8080/farmer/upload/finance',this.state)
+       // axios.get('http://192.168.43.148:8080/farmer/show/finance',{param:{aadharid:thiss.state.aadharid}})
+       // axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
         .then(response => { console.log(response)})
         .catch(error => { console.log(error)})
     }

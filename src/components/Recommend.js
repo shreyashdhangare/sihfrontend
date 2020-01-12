@@ -21,19 +21,20 @@ export class SignIn extends Component {
                 State_Name:"",
                 District_Name:"",
                 Season:"",
-                Crop:""
+                Crop:"",
+                auth:"0"
             }
     }
     
     submitHandler =(e) =>{ 
         e.preventDefault() ;
         console.log(this.state)
-        axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
+        axios.post('http://192.168.43.86:5000/q',{params:{State_Name:this.state.State_Name,Season:this.state.Season,Crop:this.state.Crop,District_Name:this.state.District_Name}})
         .then(response => { 
         console.log(response.data)
-        if(response.data.id===101)
+       // if(response.data.id===101)
         {
-            this.setState({auth:1})
+            this.setState({auth:1,prediction:response.data.prediction})
         }
      })
         .catch(error => { console.log(error)})
@@ -45,7 +46,7 @@ export class SignIn extends Component {
         {
             return <Redirect to={{
                 pathname: '/account/getyeild',
-                state: { aadharid: this.state.aadharid }
+                state: { prediction: this.state.prediction }
             }}/>
         }
         const {District_Name,State_Name,Crop,Season}=this.state
